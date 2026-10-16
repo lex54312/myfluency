@@ -1,0 +1,82 @@
+---
+import { site } from '../site.config';
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>
+      <a class="logo" href="/">My<span>Fluency</span></a>
+      <p>IELTS coaching for candidates who need Band 7 and are tired of resitting.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/book">Book a trial</a>
+      <a href="/blog">Blog</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="social">
+      <a href={site.instagram} rel="me noopener" target="_blank">Instagram</a>
+      <a href={site.tiktok} rel="me noopener" target="_blank">TikTok</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </div>
+  </div>
+  <div class="wrap footer__legal">
+    <p>© {year} {site.name}. IELTS is a registered trademark of the British Council, IDP: IELTS Australia and Cambridge University Press &amp; Assessment. MyFluency is an independent tutor and is not affiliated with them.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink);
+    color: #d9d1c6;
+    padding: 64px 0 32px;
+    font-size: 0.95rem;
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 32px;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--bg);
+    text-decoration: none;
+  }
+  .logo span {
+    color: var(--accent);
+  }
+  p {
+    max-width: 34ch;
+    margin-top: 0.75em;
+  }
+  nav,
+  .social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  a {
+    color: #f6f3ee;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+  a:hover {
+    color: var(--accent);
+  }
+  .footer__legal {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #423b35;
+  }
+  .footer__legal p {
+    max-width: none;
+    font-size: 0.82rem;
+    color: #a89f94;
+  }
+  @media (max-width: 760px) {
+    .footer__inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

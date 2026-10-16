@@ -1,0 +1,99 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: '/#method', label: 'Method' },
+  { href: '/#results', label: 'Results' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/blog', label: 'Blog' },
+];
+---
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="logo" href="/" aria-label="MyFluency home">My<span>Fluency</span></a>
+    <nav aria-label="Main">
+      <ul>
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.href} aria-current={path.startsWith(l.href) && l.href !== '/' ? 'page' : undefined}>
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <a class="btn btn--primary header__cta" href="/book">Book a trial</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246, 243, 238, 0.92);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header__inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 68px;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .logo span {
+    color: var(--accent-deep);
+  }
+  nav {
+    margin-left: auto;
+  }
+  ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.97rem;
+  }
+  nav a:hover,
+  nav a[aria-current='page'] {
+    color: var(--ink);
+  }
+  .header__cta {
+    min-height: 42px;
+    padding: 0.55em 1.2em;
+    font-size: 0.95rem;
+  }
+  @media (max-width: 760px) {
+    nav ul li:not(:last-child) {
+      display: none;
+    }
+    .header__inner {
+      gap: 16px;
+    }
+  }
+  @media (max-width: 380px) {
+    nav {
+      display: none;
+    }
+    .header__cta {
+      margin-left: auto;
+    }
+  }
+</style>

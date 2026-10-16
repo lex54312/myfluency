@@ -1,0 +1,706 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, pricing } from '../site.config';
+
+const faqs = [
+  {
+    q: 'What happens in the trial lesson?',
+    a: "We go through your previous scores and where you lost marks, I hear you speak, and we look at your writing. You'll leave knowing which criteria are holding you back and how long it will realistically take to reach your target.",
+  },
+  {
+    q: 'Do you teach Academic or General Training?',
+    a: 'Both. Speaking and Listening are the same in both versions, and the Writing Task 2 essay works the same way. Where they differ, mainly Writing Task 1 and Reading, we prepare for the version you are sitting.',
+  },
+  {
+    q: 'How long will it take to get from 6 to 7?',
+    a: "It depends on where you're losing marks and how much you practise between lessons. Some students move quickly once the technique clicks: Durant reached 7.5 in two months. In the trial I'll give you a realistic estimate, not a sales promise.",
+  },
+  {
+    q: 'Where do lessons happen?',
+    a: 'Online, one-to-one, by video call. You can join from anywhere in the world.',
+  },
+  {
+    q: 'What time zone are you in?',
+    a: "I'm based in the UK. When you book, available times show in your own time zone automatically.",
+  },
+  {
+    q: 'Can you guarantee my score?',
+    a: "No, and be wary of anyone who does. What I can promise is that you'll know exactly what's costing you marks, and you'll have a method to fix it.",
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: site.name,
+    url: site.url,
+    description: site.description,
+    founder: { '@type': 'Person', name: site.tutor, jobTitle: 'IELTS tutor' },
+    sameAs: [site.instagram, site.tiktok],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Base title="IELTS Tutor for Band 7 Speaking and Writing" schema={schema}>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">IELTS Speaking &amp; Writing coaching</p>
+      <h1>Stuck at Band&nbsp;6? Your English isn't the&nbsp;problem.</h1>
+      <p class="lede hero__lede">
+        You hold conversations, write emails and get through your day in English. Then test day comes and the score
+        won't move. I teach you exactly what examiners reward in Speaking and Writing, so your next attempt is your last.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/book">Book a trial lesson</a>
+        <a class="btn btn--ghost" href="/book#ask">Ask a question first</a>
+      </div>
+      <p class="hero__meta">One-to-one, online · Academic and General Training</p>
+    </div>
+  </section>
+
+  <!-- Proof strip -->
+  <section class="proof" aria-label="Student results">
+    <div class="wrap proof__inner">
+      <div class="proof__stat">
+        <span class="proof__num">7.5</span>
+        <span>Durant's band, two months after starting lessons</span>
+      </div>
+      <blockquote class="proof__quote">
+        <p>"I still remember the PEE method she taught me when I was feeling very confused before taking the IELTS."</p>
+        <cite>Cynthia</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <div class="wrap">
+      <div class="narrow">
+        <p class="eyebrow">Why your score won't move</p>
+        <h2>Band 7 isn't better English. It's English an examiner can&nbsp;score.</h2>
+        <p class="lede">
+          The examiner isn't asking whether you can communicate. You can. They're scoring you against fixed criteria,
+          and Band 6 answers miss them in predictable ways.
+        </p>
+      </div>
+      <div class="grid grid--2 gaps">
+        <div class="card">
+          <h3>Answers that stop too soon</h3>
+          <p>You answer the question, then go quiet. Band 7 speakers develop the point without being pushed.</p>
+        </div>
+        <div class="card">
+          <h3>Ideas that go nowhere</h3>
+          <p>In Writing Task 2 you state a position and move on. The marker wants it explained and supported.</p>
+        </div>
+        <div class="card">
+          <h3>Safe vocabulary</h3>
+          <p>
+            The same words you use every day. Band 7 needs less common words used naturally, not memorised
+            "advanced" phrases dropped in at random.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Grammar that plays it safe, or breaks</h3>
+          <p>
+            You either avoid long sentences or they fall apart halfway. Band 7 needs a range of structures, mostly
+            error-free.
+          </p>
+        </div>
+      </div>
+      <p class="narrow closer">
+        Every retake costs another test fee and another few weeks. If nothing changes in how you prepare, nothing
+        changes in the result. More English won't fix this. <strong>Technique will.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section section--alt" id="method">
+    <div class="wrap">
+      <div class="narrow">
+        <p class="eyebrow">What we work on</p>
+        <h2>All four papers. Built around the two that hold you&nbsp;back.</h2>
+        <p class="lede">
+          Speaking and Writing are where a human examiner judges how you use English, and they're where most Band 6
+          candidates lose their marks. That's where most of our time goes.
+        </p>
+      </div>
+      <div class="grid grid--3 gaps">
+        <div class="card card--feature">
+          <p class="tag">Main focus</p>
+          <h3>Speaking</h3>
+          <ul>
+            <li>The PEE method (Point, Explain, Example), so you stop running dry after one sentence</li>
+            <li>Planning a Part 2 long turn in the 60 seconds you're given</li>
+            <li>Handling abstract Part 3 questions without freezing</li>
+            <li>Fewer fillers, natural linking and clear pronunciation</li>
+            <li>Speaking with confidence, mistakes and all</li>
+          </ul>
+        </div>
+        <div class="card card--feature">
+          <p class="tag">Main focus</p>
+          <h3>Writing</h3>
+          <ul>
+            <li>Task 2: answering the exact question, with a clear position throughout</li>
+            <li>Paragraphs that develop one idea properly instead of listing five</li>
+            <li>Linking ideas without stuffing in "Furthermore" and "Moreover"</li>
+            <li>Task 1: a clear overview and the features that matter</li>
+            <li>Feedback on your writing against the official band descriptors</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p class="tag tag--quiet">Strategy</p>
+          <h3>Reading &amp; Listening</h3>
+          <ul>
+            <li>Timing, so you finish every section</li>
+            <li>Techniques for the question types that cost you most</li>
+            <li>Spotting the traps: paraphrase, distractors and spelling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="wrap">
+      <div class="narrow">
+        <p class="eyebrow">How it works</p>
+        <h2>Diagnose. Fix. Repeat until it holds.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="steps__n">1</span>
+          <h3>Trial lesson</h3>
+          <p>
+            We find exactly where your marks are going. You leave knowing your weakest criteria and what it will take to
+            fix them.
+          </p>
+        </li>
+        <li>
+          <span class="steps__n">2</span>
+          <h3>A plan for your test date</h3>
+          <p>
+            Lessons target your gaps, not a generic syllabus. If your test is close, we start with what moves the score
+            fastest.
+          </p>
+        </li>
+        <li>
+          <span class="steps__n">3</span>
+          <h3>Practice until it's automatic</h3>
+          <p>
+            Technique only counts if it survives exam pressure. We drill it until you use it without thinking, so it's
+            still there on test day.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section section--dark" id="results">
+    <div class="wrap">
+      <p class="eyebrow">Results</p>
+      <h2>What happens when the technique clicks</h2>
+      <div class="results">
+        <div class="result result--stat">
+          <span class="result__num">7.5</span>
+          <p><strong>Durant</strong> reached Band 7.5 within two months of starting lessons.</p>
+        </div>
+        <figure class="result result--quote">
+          <blockquote>
+            <p>
+              "I am very pleased to have met Teacher Moona online. She is extremely patient and highly effective in her
+              teaching methods. I still remember the PEE method she taught me when I was feeling very confused before
+              taking the IELTS. It helped enrich my sentences and made speaking less difficult when I was often stuck.
+              Many of her other methods are also very practical.
+            </p>
+            <p>
+              At first, I was always too afraid to speak in oral exams, but Teacher Moona constantly encouraged me to
+              speak, saying that it was okay to make mistakes. Gradually, speaking became less challenging, and
+              eventually, I achieved a satisfactory IELTS score."
+            </p>
+          </blockquote>
+          <figcaption><strong>Cynthia</strong> · IELTS 6.5</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="wrap about">
+      <div class="about__photo">
+        {
+          site.photo ? (
+            <img src={site.photo} alt="Moona, IELTS tutor" width="420" height="525" loading="lazy" />
+          ) : (
+            <div class="about__placeholder" aria-hidden="true">M</div>
+          )
+        }
+      </div>
+      <div class="about__text">
+        <p class="eyebrow">Your tutor</p>
+        <h2>Hi, I'm Moona.</h2>
+        <p>
+          I'm a TEFL-certified English tutor based in the UK, and I've coached hundreds of students online through the
+          hardest parts of learning English.
+        </p>
+        <p>
+          After enough Band 6 students, I saw the same problems come up again and again: strong English, weak exam
+          technique. The methods I teach were built to fix exactly those problems, and they're simple enough to use
+          under pressure.
+        </p>
+        <p>
+          I'm patient, and I'll push you to speak, mistakes and all. That's usually where the breakthrough happens.
+        </p>
+        <a class="btn btn--primary" href="/book">Book a trial lesson</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="narrow">
+        <p class="eyebrow">Is this for you?</p>
+        <h2>This is for people who need the score, not just the practice.</h2>
+      </div>
+      <div class="grid grid--2 gaps">
+        <div class="card fit fit--yes">
+          <h3>A good fit if</h3>
+          <ul>
+            <li>You need Band 7 or above for a visa, a university place or professional registration</li>
+            <li>You've sat IELTS at least once and missed your target</li>
+            <li>Your everyday English is good, but your score doesn't show it</li>
+            <li>You want honest feedback, not reassurance</li>
+          </ul>
+        </div>
+        <div class="card fit fit--no">
+          <h3>Not the right fit if</h3>
+          <ul>
+            <li>You're a beginner or lower intermediate learner</li>
+            <li>You want a guaranteed band score. Nobody can honestly promise one</li>
+            <li>You'd rather watch a course than practise out loud</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <div class="narrow">
+        <p class="eyebrow">Lessons</p>
+        <h2>Start with a trial. Decide after.</h2>
+        <p class="lede">All lessons are one-to-one by video call. Times show in your own time zone when you book.</p>
+      </div>
+      <div class="grid grid--3 gaps">
+        {
+          pricing.map((p) => (
+            <div class={`card price ${p.featured ? 'price--featured' : ''}`}>
+              {p.featured && <p class="tag">Best value</p>}
+              <h3>{p.name}</h3>
+              <p class="price__amount">{p.price}</p>
+              <p class="price__length">{p.length}</p>
+              <ul>
+                {p.points.map((pt) => (
+                  <li>{pt}</li>
+                ))}
+              </ul>
+              <a class={`btn ${p.featured ? 'btn--primary' : 'btn--ghost'}`} href="/book">
+                {p.cta}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--alt" id="faq">
+    <div class="wrap narrow">
+      <p class="eyebrow">Questions</p>
+      <h2>Before you book</h2>
+      <div class="faq">
+        {
+          faqs.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section cta">
+    <div class="wrap narrow">
+      <h2>Ready to find out what's holding your score back?</h2>
+      <p class="lede">
+        Book a trial lesson. You'll leave with a clear diagnosis and a plan, whether or not you carry on with me.
+      </p>
+      <div class="btn-row cta__buttons">
+        <a class="btn btn--primary" href="/book">Book a trial lesson</a>
+        <a class="btn btn--ghost" href="/book#ask">Ask a question first</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: clamp(72px, 12vw, 140px) 0 clamp(56px, 8vw, 96px);
+  }
+  .hero h1 {
+    max-width: 15ch;
+  }
+  .hero__lede {
+    max-width: 58ch;
+    margin: 1.5rem 0 2rem;
+  }
+  .hero__meta {
+    margin-top: 1.25rem;
+    font-size: 0.92rem;
+    color: var(--ink-faint);
+  }
+
+  .proof {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .proof__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+  .proof__stat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 320px;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+    line-height: 1.4;
+  }
+  .proof__num {
+    font-family: var(--serif);
+    font-size: 3.25rem;
+    line-height: 1;
+    color: var(--accent-deep);
+  }
+  .proof__quote {
+    margin: 0;
+    padding-left: clamp(0px, 5vw, 64px);
+    border-left: 1px solid var(--line);
+  }
+  .proof__quote p {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 0.4em;
+  }
+  .proof__quote cite {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--ink-faint);
+  }
+
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gaps {
+    margin-top: 40px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .card p:last-child,
+  .card ul:last-child {
+    margin-bottom: 0;
+  }
+  .card ul {
+    padding-left: 1.1em;
+    margin: 0;
+  }
+  .card li {
+    margin-bottom: 0.55em;
+    color: var(--ink-soft);
+  }
+  .card--feature {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .tag--quiet {
+    background: var(--bg-alt);
+  }
+  .closer {
+    margin-top: 40px;
+    font-size: 1.15rem;
+  }
+
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .steps li {
+    border-top: 2px solid var(--ink);
+    padding-top: 20px;
+  }
+  .steps__n {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--accent-deep);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .steps p {
+    color: var(--ink-soft);
+  }
+
+  .results {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .result {
+    background: #332e2a;
+    border-radius: var(--radius);
+    padding: 32px;
+    margin: 0;
+  }
+  .result--stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .result__num {
+    font-family: var(--serif);
+    font-size: clamp(5rem, 12vw, 7.5rem);
+    line-height: 0.9;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .result p {
+    color: #e8e1d7;
+  }
+  .result--quote blockquote {
+    margin: 0 0 20px;
+  }
+  .result--quote blockquote p {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.55;
+  }
+  .result figcaption {
+    color: #bfb6aa;
+    font-size: 0.95rem;
+  }
+  .result strong {
+    color: var(--bg);
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: minmax(220px, 380px) 1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+  }
+  .about__photo img,
+  .about__placeholder {
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    width: 100%;
+  }
+  .about__placeholder {
+    display: grid;
+    place-items: center;
+    background: var(--bg-alt);
+    font-family: var(--serif);
+    font-size: 6rem;
+    color: var(--accent-deep);
+  }
+  .about__text p {
+    color: var(--ink-soft);
+    max-width: 56ch;
+  }
+  .about__text .btn {
+    margin-top: 0.5rem;
+  }
+
+  .fit h3 {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .fit ul {
+    list-style: none;
+    padding: 0;
+  }
+  .fit li {
+    padding-left: 1.75em;
+    position: relative;
+  }
+  .fit li::before {
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .fit--yes li::before {
+    content: '✓';
+    color: #3d7a4a;
+  }
+  .fit--no li::before {
+    content: '✕';
+    color: #a3402b;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: column;
+  }
+  .price--featured {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+  .price .tag {
+    align-self: flex-start;
+  }
+  .price__amount {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: 8px 0 4px;
+  }
+  .price__length {
+    color: var(--ink-faint);
+    font-size: 0.95rem;
+  }
+  .price ul {
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .price .btn {
+    align-self: stretch;
+  }
+
+  .faq {
+    margin-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  details {
+    border-bottom: 1px solid var(--line);
+  }
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 20px 40px 20px 0;
+    font-weight: 600;
+    font-size: 1.075rem;
+    position: relative;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--accent-deep);
+  }
+  details[open] summary::after {
+    content: '−';
+  }
+  details p {
+    color: var(--ink-soft);
+    padding-bottom: 8px;
+  }
+
+  .cta {
+    text-align: center;
+  }
+  .cta .narrow {
+    margin: 0 auto;
+  }
+  .cta__buttons {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    .grid--3,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+    .results {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 760px) {
+    .grid--2,
+    .about,
+    .proof__inner {
+      grid-template-columns: 1fr;
+    }
+    .proof__quote {
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      padding: 20px 0 0;
+    }
+    .about__photo {
+      max-width: 320px;
+    }
+  }
+</style>
